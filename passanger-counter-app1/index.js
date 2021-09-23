@@ -33,25 +33,31 @@
 // increment()
 // increment()
 // console.log(lapsCompleted)
+
+// 4 render by id
+// welcomeEl = document.getElementById("welcome-el")
+
+// let names = "josep"
+// let greeting="welcome"
+
+// welcomeEl.innerText = greeting + names 
+// welcomeEl.innerText = welcomeEl.innerText + " aqui"
+
 //button increament with a function
+
 let count = 1
+let countEl = document.getElementById("count-el")
 function increment() {
     count +=1   
     //change the count-el in the HTML to reflect the new count
-    document.getElementById("count-el").innerText = count  
+    countEl.textContent = count  
     //console.log(count)
 }
 
+let saveEl = document.getElementById("save-el")
 function save() {
-    //console.log(count)
-    document.getElementById("saved").innerText = count  
+    let countStr = count + " - "
+    saveEl.textContent += countStr
+    count = 0
+    countEl.textContent = 0
 }
-
-// 4 render by id
-welcomeEl = document.getElementById("welcome-el")
-
-let names = "josep"
-let greeting="welcome"
-
-welcomeEl.innerText = greeting + names 
-welcomeEl.innerText = welcomeEl.innerText + " aqui"
