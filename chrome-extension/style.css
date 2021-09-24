@@ -21,4 +21,16 @@ button{
 
     }
 
+ul{
+    list-style: none;
+    padding-left: 0;
 
+}
+
+li {
+    margin-top: 5px;
+}
+/* a in a list item */
+li a {
+    color: #5f9341;
+}
