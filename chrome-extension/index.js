@@ -10,7 +10,7 @@ let oldLeads = []
 const inputEl = document.getElementById("input-el")
 let inputBtn = document.getElementById("input-btn")
 const ulEl =document.getElementById("ul-el")
-
+const tabBtn = document.getElementById("tab-btn")
 // local storage
 //localStorage.setItem("myName", "Josep Andreu")
 //  let name = localStorage.getItem("myName")
@@ -24,6 +24,21 @@ if (leadsFromLocalStorage) {
     myLeads = leadsFromLocalStorage
     render(myLeads)
 }
+
+const tabs = [ 
+    {url:"http://geomaps-blog.herokuapp.com/"}
+]
+tabBtn.addEventListener("click", function(){
+    // grab the url of the current tab
+    chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        let activeTab = tabs[0]
+        let activeTabId = activeTab.id
+    })
+   // console.log(tabs[0].url)
+    myLeads.push(tabs[0].url)
+    localStorage.setItem("myLeads", JSON.stringify(myLeads))  // save the url 
+    render(myLeads)
+})
 
 function render(leads){
     let listItems = ""
